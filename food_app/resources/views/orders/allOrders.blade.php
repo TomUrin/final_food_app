@@ -5,17 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">Orders</div>
+                <div class="card-header">Užsakymai</div>
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Client name</th>
-                                <th scope="col">Country</th>
-                                <th scope="col">Meniu</th>
+                                <th scope="col">Kliento vardas</th>
+                                <th scope="col">Restoranas</th>
+                                <th scope="col">Valgiaraštis</th>
                                 <th scope="col">Patiekalas</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Change status</th>
+                                <th scope="col">Būsena</th>
+                                <th scope="col">Pakeisti būsena</th>
                             </tr>
                         </thead>
                         @foreach($orders as $order)

@@ -18,7 +18,7 @@
                                         @foreach($restaurant as $key => $res)
                                         <option value="{{$res->id}}">{{$res->title}}
                                         </option>
-                                        <button type="submit" class="btn btn-primary btn-sm ms-3 mt-2">Set status</button>
+                                        <button type="submit" class="btn btn-primary btn-sm ms-3 mt-2">Būsenos pakeitimas</button>
                                         @endforeach
                                     </select>
                                 </div>
@@ -40,17 +40,15 @@
                                     <div>
                                         <select name="dish_id" class="form-select">
                                             @foreach($food as $f)
-                                            @if($f->menu_id == $f->id)
-                                            <option value="{{$f->id}}">{{$f->dish_title}} {{$f->id}} {{$f->menu_id}}
+                                            <option value="{{$f->id}}">{{$f->dish_title}} 
                                             </option>
-                                            @endif
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-md-3">
                                             <div class="d-grid gap-3">
-                                                <label class="row justify-content-center mt-4" for="quantity">Iveskite kieki:</label>
+                                                <label class="row justify-content-center mt-4" for="quantity">Įveskite kiekį:</label>
                                                 <input class="form-label" type="number" id="quantity" name="addQuantity" min="1" max="10">
                                             </div>
                                         </div>

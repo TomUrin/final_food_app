@@ -17,7 +17,6 @@
                                 <th scope="col">Būsena</th>
                             </tr>
                         </thead>
-
                         @foreach($orders as $order)
                         <tbody class="table-body">
                             <tr class="cell-1">

@@ -26,7 +26,6 @@
                             <input name="address" type="text" class="form-control">
                             <div style="color: crimson;">{{ $errors->first('seasonStart') }}</div>
                         </div>
-
                         <div class="row justify-content-center">
                             <div class="col-md-3">
                                 <div class="d-grid gap-2">

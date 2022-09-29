@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-header">Add new mechanic</div>
+                <div class="card-header">Pridėti naują patiekalą</div>
                 <div class="card-body">
                     <div class="d-grid gap-2">
-                        <a class="btn btn-outline-success mb-5" href="{{route('dish-index')}}">Click here to see mechanics list</a>
+                        <a class="btn btn-outline-success mb-5" href="{{route('dish-index')}}">Paspauskite norėdami pamatyti patiekalų sąrašą</a>
                     </div>
                     <form class="create" action="{{route('dish-store')}}" method="post" enctype="multipart/form-data">
                         <div class="form-group mb-3">
@@ -53,5 +53,13 @@
         </div>
     </div>
 </div>
-
+@if ($errors->any())
+<div class="w-4/8 m-auto text-center">
+    @foreach ($errors->all() as $error)
+    <li class="text-danger list-none">
+        {{ $error }}
+    </li>
+    @endforeach
+</div>
+@endif
 @endsection

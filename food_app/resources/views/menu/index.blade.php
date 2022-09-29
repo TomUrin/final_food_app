@@ -33,9 +33,10 @@ Meniu
                                 <td scope="row"> {{$menu->menu_title}} </td>
                                 @if (Auth::user()->role > 9)
                                 <td scope="row" class="actions">
-                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('menu-edit', $menu)}}">EDIT</a>
+                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('menu-edit', $menu)}}">REDAGUOTI</a>
+                                    <a class="btn btn-outline-info btn-sm me-2 " href="{{route('menu-show', $menu->id)}}">RODYTI</a>
                                     <form method="POST" action="{{route('menu-delete', $menu)}}">
-                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">DELETE</button>
+                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">TRINTI</button>
                                 </td>
                                 @endif
                             </tr>

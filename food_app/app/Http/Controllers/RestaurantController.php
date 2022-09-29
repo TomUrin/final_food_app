@@ -52,7 +52,7 @@ class RestaurantController extends Controller
             'address' => 'required',
         ]);
 
-        $restaurant = new restaurant;
+        $restaurant = new Restaurant;
 
         $restaurant->title = $request->restaurant;
         $restaurant->code = $request->code;

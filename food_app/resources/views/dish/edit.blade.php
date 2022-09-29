@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-header">Edit dish information</div>
+                <div class="card-header">Redaguoti patiekalo informaciją</div>
                 <div class="card-body">
                     <div class="d-grid gap-2">
                         <a class="btn btn-outline-success mb-2" href="{{route('dish-index')}}">Grižti prie patiekalų sąrašo</a>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             <div class="mx-auto mt-4">
-                                <button type="submit" name="submit" value="send" class="btn btn-outline-success btn-sm">EDIT</button>
+                                <button type="submit" name="submit" value="send" class="btn btn-outline-success btn-sm">REDAGUOTI</button>
                             </div>
                             @endif
                 @csrf

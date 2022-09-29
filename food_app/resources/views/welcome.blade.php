@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Welcome') }}</div>
+                <div class="card-header">{{ __('Sveiki atvykę') }}</div>
                 <div class="card-body">
-                    {{ __('Please log in or register to begin') }}
+                    {{ __('Norėdami pradėti, prisijunkite arba užsiregistruokite') }}
                 </div>
             </div>
         </div>

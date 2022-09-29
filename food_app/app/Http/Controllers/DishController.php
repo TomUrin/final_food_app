@@ -6,9 +6,14 @@ use App\Models\Dish;
 use App\Models\Menu;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Validator;
 
 class DishController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,6 +45,12 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $food = new Dish;
 
         if ($request->file('food_photo')) {
@@ -53,7 +64,6 @@ class DishController extends Controller
         
         $food->dish_title = $request->title;
         $food->description = $request->description;
-        $food->quantity = 0;
         $food->menu_id = $request->menu;
 
         $food->save();

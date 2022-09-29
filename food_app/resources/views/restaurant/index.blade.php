@@ -37,9 +37,9 @@ Restoranai
                                 <td scope="row"> {{$restaurant->address}} </td>
                                 @if (Auth::user()->role > 9)
                                 <td scope="row" class="actions">
-                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('restaurant-edit', $restaurant)}}">EDIT</a>
+                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('restaurant-edit', $restaurant)}}">REDAGUOTI</a>
                                     <form method="POST" action="{{route('restaurant-delete', $restaurant)}}">
-                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">DELETE</button>
+                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">TRINTI</button>
                                 </td>
                                 @endif
                             </tr>

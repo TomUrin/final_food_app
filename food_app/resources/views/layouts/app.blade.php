@@ -42,126 +42,125 @@
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Prisijungti') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registruotis') }}</a>
                         </li>
                         @endif
                         @else
                         @if (Auth::user()->role < 9) <div>
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="d-grid gap-2">
-                            <a class="btn btn-outline-success mt-1 me-5" href="{{route('food-pick')}}">Click here to start ordering</a>
-                        </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="d-grid gap-2">
+                                        <a class="btn btn-outline-success mt-1 me-5" href="{{route('food-pick')}}">Spauskite čia norėdami užsisakyti</a>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                @endif
+                @if (Auth::user()->role < 9) <li class="nav-item dropdown">
+                    <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Mano užsakymai
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="{{ route('my-orders') }}">
+                            Rodyti
+                        </a>
                     </div>
-                </div>
-        </div>
-        @endif
-                        @if (Auth::user()->role < 9)
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                MY Orders
+                    </li>
+                    @endif
+                    @if (Auth::user()->role > 9)
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Užsakymai
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('selectedServices-index') }}">
+                                <i class="bi bi-card-list"></i>
+                                Užsakymų sąrašas
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="{{ route('my-orders') }}">
-                                    View
-                                </a>
-                            </div>
-                        </li>
-                        @endif
-                        @if (Auth::user()->role > 9)
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Orders
+                        </div>
+                    </li>
+                    @endif
+                    @if (Auth::user()->role > 9)
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Restoranai
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('restaurant-index') }}">
+                                <i class="bi bi-card-list"></i>
+                                Restoranų sąrašas
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('selectedServices-index') }}">
-                                    <i class="bi bi-card-list"></i>
-                                    Orders list
-                                </a>
-                            </div>
-                        </li>
-                        @endif
-                        @if (Auth::user()->role > 9)
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Restaurants
+                            <a class="dropdown-item" href="{{ route('restaurant-create') }}">
+                                <i class="bi bi-plus-square"></i>
+                                Pridėti naują restoraną
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('restaurant-index') }}">
-                                    <i class="bi bi-card-list"></i>
-                                    Restaurants list
-                                </a>
-                                <a class="dropdown-item" href="{{ route('restaurant-create') }}">
-                                    <i class="bi bi-plus-square"></i>
-                                    Add new restaurant
-                                </a>
-                            </div>
-                        </li>
-                        @endif
-                        @if (Auth::user()->role > 9)
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Menu
+                        </div>
+                    </li>
+                    @endif
+                    @if (Auth::user()->role > 9)
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Valgiaraščiai
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('menu-index') }}">
+                                <i class="bi bi-card-list"></i>
+                                Valgiaraščių sąrašas
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('menu-index') }}">
-                                    <i class="bi bi-card-list"></i>
-                                    Menus list
-                                </a>
-                                <a class="dropdown-item" href="{{ route('menu-create') }}">
-                                    <i class="bi bi-plus-square"></i>
-                                    Add new menu
-                                </a>
-                            </div>
-                        </li>
-                        @endif
-                        @if (Auth::user()->role > 9)
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Dish
+                            <a class="dropdown-item" href="{{ route('menu-create') }}">
+                                <i class="bi bi-plus-square"></i>
+                                Pridėti naują valgiaraštį
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('dish-index') }}">
-                                    <i class="bi bi-card-list"></i>
-                                    Dishes list
-                                </a>
+                        </div>
+                    </li>
+                    @endif
+                    @if (Auth::user()->role > 9)
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Patiekalai
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('dish-index') }}">
+                                <i class="bi bi-card-list"></i>
+                                Patiekalų sąrašas
+                            </a>
 
-                                <a class="dropdown-item" href="{{ route('dish-create') }}">
-                                    <i class="bi bi-person-plus"></i>
-                                    Add new dish
-                                </a>
-                            </div>
-                        </li>
-                        @endif
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                            <a class="dropdown-item" href="{{ route('dish-create') }}">
+                                <i class="bi bi-person-plus"></i>
+                                Pridėti naują patiekalą
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        </div>
+                    </li>
+                    @endif
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
+                                {{ __('Atsijungti') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
                     </ul>
-                </div>
             </div>
-        </nav>
-        <main class="py-4">
-            @include('msg.main')
-            @yield('content')
-        </main>
+    </div>
+    </nav>
+    <main class="py-4">
+        @include('msg.main')
+        @yield('content')
+    </main>
     </div>
 
 </body>

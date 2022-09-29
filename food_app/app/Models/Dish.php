@@ -13,4 +13,5 @@ class Dish extends Model
     {
         return $this->belongsTo(M::class, 'menu_id', 'id');
     }
+    
 }

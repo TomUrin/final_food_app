@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Meniu
+Valgiaraštis
 @endsection
 
 @section('content')
@@ -34,22 +34,20 @@ Meniu
                         <tbody>
                             <tr>
                                 <td scope="row"> {{$food->dish_title}} </td>
-                                <td scope="row"> 
+                                <td scope="row">
                                     @if($food->image_path)
-                                        <div class="circle-image mt-4">
-                                            <img class="photo-box" src="{{ $food->image_path }}" />
-                                        </div>
-                                    @endif 
+                                    <div class="circle-image mt-4">
+                                        <img class="photo-box" src="{{ $food->image_path }}" />
+                                    </div>
+                                    @endif
                                 </td>
                                 <td scope="row"> {{$food->description}} </td>
                                 <td scope="row"> {{$food->menuInfo->menu_title}} </td>
-                                
-                                
                                 @if (Auth::user()->role > 9)
                                 <td scope="row" class="actions">
-                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('dish-edit', $food)}}">EDIT</a>
+                                    <a class="btn btn-outline-warning btn-sm me-2 " href="{{route('dish-edit', $food)}}">REDAGUOTI</a>
                                     <form method="POST" action="{{route('dish-delete', $food)}}">
-                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">DELETE</button>
+                                        <button class="btn btn-outline-danger btn-sm mt-2" type="submit">TRINTI</button>
                                 </td>
                                 @endif
                             </tr>
